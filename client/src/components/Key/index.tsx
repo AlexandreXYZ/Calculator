@@ -6,12 +6,10 @@ interface props {
 }
 
 export const Key = ({value, click}: props) => {
-  function handleClick(){
-    click();
-  }
+
   return(
-    <div className={style.key} onClick={handleClick} >
+    <button type='button' className={style.key} onClick={() => click()} >
       {value}
-    </div>
+    </button>
   )
 }

@@ -1,4 +1,10 @@
 .key{
+  border: none;
+  outline: none;
+  appearance: none;
+  text-decoration: none;
+  user-select: none;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,10 +12,12 @@
   background: rgb(39, 37, 37);
   width: 4rem;
   height: 4rem;
-  margin: 10rem;
 
   font-size: 1.5rem;
   color: white;
 
+  &:hover{
+    filter: brightness(0.9);
+  }
   
 }
