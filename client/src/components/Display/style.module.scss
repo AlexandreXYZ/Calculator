@@ -1,5 +1,22 @@
 .display{
+  vertical-align:middle;
+  text-align: center;
   width: 12rem;
-  height: 4rem;  
+  height: 4rem;
   background: rgb(61, 58, 58);
+  &_output{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;    
+
+    // width: 100%;
+    height: 100%;
+    color: #fff;
+    &::after{
+      content: "=";
+      margin-left: 1rem;
+      font-size: 1.5rem;
+    }
+  }
 }
