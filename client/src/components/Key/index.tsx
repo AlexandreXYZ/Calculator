@@ -9,7 +9,6 @@ interface props {
 
 export const Key = ({value, click, className = style.key}: props) => {
 
-	// ele só recebe o evento se este camarada da linha 12 também receber :b
 	return(
 		<button 
 			type='button' 

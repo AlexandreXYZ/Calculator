@@ -1,7 +1,6 @@
 import style from './style.module.scss';
 import { Key } from '../../components/Key';
 import { Display } from '../../components/Display';
-import React from 'react';
 import { FormEvent } from 'react';
 
 export const Calculator = () => {
@@ -13,7 +12,7 @@ export const Calculator = () => {
 
   return(
     <div className={style.Calculator}>
-        <Display className={style.test}/>
+        <Display/>
         <div className={style.numeric}>
           <Key value='7' click={test}/>
           <Key value='8' click={test}/>
