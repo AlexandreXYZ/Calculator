@@ -1,4 +1,5 @@
 import style from './style.module.scss'
+import { FormEvent } from 'react'
 
 interface props {
 	value?: string,
@@ -17,7 +18,7 @@ export const Key = ({value, click, className = style.key}: props) => {
 				${className} 
 				${style.key_default}
 			`} 
-			onClick={(event: React.FormEvent) => click(event)}
+			onClick={(event: FormEvent) => click(event)}
 		>
 			{value}
 		</button>
