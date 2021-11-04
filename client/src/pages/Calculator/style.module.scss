@@ -1,0 +1,15 @@
+.Calculator{
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100vh;
+}
+.numeric{
+  display: grid;
+  grid-template-columns: 4rem 4rem 4rem;
+  grid-template-rows: 4rem 4rem 4rem;
+}
