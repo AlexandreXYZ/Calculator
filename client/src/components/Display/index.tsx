@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import style from './style.module.scss';
 
 interface props {
-  value?: string | number,
+  value: Array<string>,
   classDisplay?: string | CSSModuleClasses,
   classOutput?: string | CSSModuleClasses
 }
 
-export const Display = ({ value = '', classDisplay = style.display, classOutput = style.display_output }: props ) => {
+export const Display = ({ value = [''], classDisplay = style.display, classOutput = style.display_output }: props ) => {
   const [calc, setCalc] = useState(value);
   
   useEffect(()=>{
