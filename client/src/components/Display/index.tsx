@@ -23,7 +23,12 @@ export const Display = (
   return(
     <div className={`${classDisplay}`}>
       <output onChange={ () => calc} className={`${classOutput} ${style.display_defaultOutput}`}>
-        {calc}<span className={`${style.display_output_u}`}> = </span> { lastIsOperator(calc) == true ? 0 : eval(calc)}
+        {calc}
+        <span className={`${style.display_output_u}`}> = </span> 
+        { 
+          calc == '' ? 0 :
+          lastIsOperator(calc) == true ? 0 : eval(calc) 
+        }
       </output>
     </div>
   )
