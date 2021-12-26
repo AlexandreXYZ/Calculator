@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { lastIsOperator } from '../../utils/lastIsSpecial';
+import { lastIsOperator } from '../../utils/lastIsOperator';
 import style from './style.module.scss';
 
 interface props {
