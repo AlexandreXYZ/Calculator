@@ -4,39 +4,33 @@ import { Display } from '../Display';
 import { FormEvent, useEffect, useState } from 'react';
 
 export const Calculator = () => {
-	const [calc, setCalc] = useState(['0']) 
-	const addNumber = (e: FormEvent<HTMLInputElement>) => {
-		if(calc[0] === '0') return setCalc(() => [`${e.currentTarget.value}`])
-		if(calc[0] != '0') return setCalc(calc => [...calc, `${e.currentTarget.value}`])
-	};
-	const colectNumbers = () => {
-		console.log(calc)
-	}
-	useEffect(()=>{
-		colectNumbers()
-	}, [calc])
+	const [calc, setCalc] = useState('') 
+	const handleKey = (e: FormEvent<HTMLInputElement>) => setCalc(calc + e.currentTarget.value)
 
-	
+	useEffect(()=>{
+		console.log(calc)
+	})
 	return(
 		<div className={style.Calculator}>
 				<Display value={calc}/>
 				<div className={style.numeric}>
-					<Key value='7' click={addNumber}/>
-					<Key value='8' click={addNumber}/>
-					<Key value='9' click={addNumber}/>
+					<Key value='7' click={handleKey}/>
+					<Key value='8' click={handleKey}/>
+					<Key value='9' click={handleKey}/>
 					
-					<Key value='4' click={addNumber}/>
-					<Key value='5' click={addNumber}/>
-					<Key value='6' click={addNumber}/>
+					<Key value='4' click={handleKey}/>
+					<Key value='5' click={handleKey}/>
+					<Key value='6' click={handleKey}/>
 
-					<Key value='1' click={addNumber}/>
-					<Key value='2' click={addNumber}/>
-					<Key value='3' click={addNumber}/>
-					<Key value='R' click={addNumber}/>
-					<Key value='0' click={addNumber}/>
-					<Key value='=' click={addNumber}/>
+					<Key value='1' click={handleKey}/>
+					<Key value='2' click={handleKey}/>
+					<Key value='3' click={handleKey}/>
+					<Key value='R' click={() => setCalc('')}/>
+					<Key value='0' click={handleKey}/>
 
-					<Key value='+' click={addNumber}/>
+					<Key value='+' click={handleKey}/>
+					<Key value='-' click={handleKey}/>
+					<Key value='/' click={handleKey}/>
 
 				</div>  
 			</div>

@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
+import { lastIsOperator } from '../../utils/lastIsSpecial';
 import style from './style.module.scss';
 
 interface props {
-  value: Array<string>,
+  value: string,
   classDisplay?: string | CSSModuleClasses,
   classOutput?: string | CSSModuleClasses
 }
 
-export const Display = ({ value = [''], classDisplay = style.display, classOutput = style.display_output }: props ) => {
-  const [calc, setCalc] = useState(value);
+export const Display = (
+  { 
+    value = '0',
+    classDisplay = style.display, 
+    classOutput = style.display_output 
+  }: props ) => {
   
+  const [calc, setCalc] = useState(value);
   useEffect(()=>{
     setCalc(value);
   }, [value])
@@ -17,7 +23,7 @@ export const Display = ({ value = [''], classDisplay = style.display, classOutpu
   return(
     <div className={`${classDisplay}`}>
       <output onChange={ () => calc} className={`${classOutput} ${style.display_defaultOutput}`}>
-        {calc}
+        {calc}<span className={`${style.display_output_u}`}> = </span> { lastIsOperator(calc) == true ? 0 : eval(calc)}
       </output>
     </div>
   )
